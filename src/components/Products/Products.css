@@ -36,3 +36,7 @@
 .cart-btn:hover{
    background-color: orange;
 }
+
+.shoppingCartIcon{
+   margin-left: 15px;
+}

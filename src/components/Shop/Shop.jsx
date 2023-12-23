@@ -13,16 +13,32 @@ const Shop = () => {
       .then(data => setProducts(data))
    } ,[])
 
+   const [cart, setCart] = useState([]);
+
+   const handelAddToCart = (product) =>{
+      console.log(product)
+      const newCart = [...cart, product];
+      setCart(newCart);
+   }
+
+
    return (
       <div className='shop-container'>
             <div className='products-container'>
                {
-                  products.map(product => <Products product ={product} key={product.id}></Products> )
+                  products.map(product => <Products 
+                  product ={product} 
+                  key={product.id}
+                  handelAddToCart = {handelAddToCart}
+                  
+                  >
+                  </Products> )
                }
             </div>
 
             <div className='cart-container'>
-              <Order></Order>
+               <p>Selected items :{cart.length}</p>
+              <Order handelAddToCart={handelAddToCart}></Order>
             </div>   
       </div>
    );

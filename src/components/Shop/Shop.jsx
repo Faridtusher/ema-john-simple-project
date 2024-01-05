@@ -30,7 +30,6 @@ const Shop = () => {
                   product ={product} 
                   key={product.id}
                   handelAddToCart = {handelAddToCart}
-                  
                   >
                   </Products> )
                }
